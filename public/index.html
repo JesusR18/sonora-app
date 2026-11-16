@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Sonora: blog de música con noticias en vivo, comunidad, reseñas y un tocadiscos para escuchar 66 discos.">
+<meta name="theme-color" content="#100904">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Sonora">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<title>Sonora · Blog de música</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<a class="sr" href="#noticias">Saltar a las noticias</a>
+
+<header class="nav" id="nav" data-tone="dark">
+  <div class="nav-in">
+    <a class="logo" href="#inicio" aria-label="Sonora, inicio">Sonora<i></i></a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#noticias" data-nav="noticias">Noticias</a>
+      <a href="#comunidad" data-nav="comunidad">Comunidad</a>
+      <a href="#descubre" data-nav="descubre">Descubre</a>
+      <a href="#caja" data-nav="tocadiscos">Tocadiscos</a>
+      <a href="#discos" data-nav="discos">Discos</a>
+      <a href="#artistas" data-nav="artistas">Artistas</a>
+    </nav>
+    <div class="nav-tools">
+      <button class="nbtn install" type="button" id="installBtn" hidden>Instalar app</button>
+      <button class="nbtn admin-only write-btn" type="button" data-admin="post">Escribir</button>
+      <button class="nbtn auth-btn" type="button" id="authBtn">Entrar</button>
+      <button class="icon-btn" type="button" id="focusSearch" aria-label="Buscar">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5.2"/><path d="M11 11l3.6 3.6" stroke-linecap="round"/></svg>
+      </button>
+      <button class="nbtn menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="menu">Menú</button>
+    </div>
+  </div>
+</header>
+
+<div class="menu t-dark" id="menu" hidden role="dialog" aria-modal="true" aria-label="Menú">
+  <div class="menu-top">
+    <span class="logo">Sonora</span>
+    <button class="btn-ghost" type="button" id="menuClose">Cerrar</button>
+  </div>
+  <ol>
+    <li><a href="#noticias">Noticias <small>01</small></a></li>
+    <li><a href="#comunidad">Comunidad <small>02</small></a></li>
+    <li><a href="#descubre">Descubre <small>03</small></a></li>
+    <li><a href="#caja">Tocadiscos <small>04</small></a></li>
+    <li><a href="#discos">Discos <small>05</small></a></li>
+    <li><a href="#artistas">Artistas <small>06</small></a></li>
+  </ol>
+  <div class="menu-foot">
+    <button class="btn-ghost" type="button" id="menuInstall" hidden>Instalar app</button>
+    <button class="btn-ghost" type="button" id="menuAuth">Entrar</button>
+    <button class="btn-ghost" type="button" id="menuRandom">Disco al azar</button>
+  </div>
+</div>
+
+<div class="side-label num" id="sideLabel" aria-hidden="true"></div>
+
+<main>
+  <!-- 00 · ORYZO: el objeto en la oscuridad -->
+  <section class="hero t-dark" id="inicio" data-nav="inicio" data-tone="dark">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-head">
+      <p class="tagline">Noticias, discos y comunidad. En vivo.</p>
+      <h1 class="wordmark">Sonora</h1>
+    </div>
+    <button class="hero-object" type="button" id="heroObject">
+      <span class="ho-disc" aria-hidden="true"><span class="ho-grooves"></span><img class="ho-label" id="heroLabel" alt=""></span>
+      <img class="ho-sleeve" id="heroSleeve" alt="">
+      <span class="ho-shade" aria-hidden="true"></span>
+    </button>
+    <div class="hero-card">
+      <p class="hc-title" id="heroCount"></p>
+      <hr class="dash">
+      <p class="hc-body prose">Lo último de la música al momento, una comunidad para opinar y un tocadiscos para escuchar cada disco.</p>
+      <div class="hc-actions">
+        <a class="btn-fill" href="#noticias">Leer lo último</a>
+        <button class="tlink" type="button" id="randomBtn">Disco al azar</button>
+      </div>
+    </div>
+    <button class="hero-thumb" type="button" id="heroThumb">
+      <span class="ht-media">
+        <img id="thumbImg" alt="">
+        <span class="ht-play"><i>
+          <svg class="ic-play" width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M3 1.5v9l7.5-4.5z"/></svg>
+          <svg class="ic-pause" width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M2.5 1.5h2.6v9H2.5zM6.9 1.5h2.6v9H6.9z"/></svg>
+        </i></span>
+      </span>
+      <span class="ht-text"><span class="ht-mark">Sonora · avance 0:30</span><b id="thumbTitle"></b><span id="thumbArtist"></span></span>
+    </button>
+  </section>
+
+
+  <!-- 01 · Blog: lo último -->
+  <section class="t-shop blog" id="noticias" data-nav="noticias" data-tone="light" data-tone-in="110">
+    <div class="wrap">
+      <div class="blog-head">
+        <div>
+          <span class="kicker"><b>01</b> — Lo último</span>
+          <h2>Noticias y novedades de la música</h2>
+          <p>Lo que pasa hoy en la música, al momento. Reacciona, comenta y escucha a los artistas en el tocadiscos.</p>
+        </div>
+        <p class="live" id="feedLive"><i></i>En vivo</p>
+      </div>
+      <div class="feed-bar">
+        <div class="tabs" id="feedTabs" aria-label="Tipo de entrada">
+          <button type="button" data-feed="all" aria-pressed="true">Todo</button>
+          <button type="button" data-feed="news" aria-pressed="false">Noticias</button>
+          <button type="button" data-feed="article" aria-pressed="false">Artículos de Sonora</button>
+          <button type="button" data-feed="catalog" aria-pressed="false">Tus artistas</button>
+        </div>
+        <button class="pill pill-fill admin-only" type="button" data-admin="post">Escribir entrada</button>
+      </div>
+      <button class="feed-new" id="feedNew" type="button" hidden></button>
+      <div class="feed-top" id="feedTop"></div>
+      <div class="feed-grid" id="feedGrid"></div>
+      <div class="feed-more"><button class="pill pill-line" id="feedMore" type="button" hidden>Cargar más</button></div>
+    </div>
+  </section>
+
+  <!-- 02 · Comunidad -->
+  <section class="t-gallery band gallery community" id="comunidad" data-nav="comunidad" data-tone="light">
+    <div class="wrap">
+      <div class="g-head">
+        <div>
+          <span class="kicker"><b>02</b> — Comunidad</span>
+          <h2>La conversación, en vivo.</h2>
+          <p>Vota en la encuesta, platica con quien está escuchando ahora y lee lo que opina la comunidad.</p>
+        </div>
+        <button class="g-link admin-only" type="button" data-admin="poll">Nueva encuesta ›</button>
+      </div>
+      <div class="comm-grid">
+        <div class="g-card comm-poll"><p class="g-eyebrow">Encuesta</p><div id="pollBox"><p class="rd-note">Cargando…</p></div></div>
+        <div class="g-card comm-chat">
+          <div class="chat-head"><p class="g-eyebrow">Chat en vivo</p><p class="online num" id="chatOnline"></p></div>
+          <ol class="chat-list" id="chatList" aria-live="polite"></ol>
+          <form class="chat-form" id="chatForm">
+            <label class="sr" for="chatInput">Mensaje</label>
+            <input id="chatInput" maxlength="500" autocomplete="off" placeholder="Escribe un mensaje…">
+            <button class="pill pill-fill" type="submit">Enviar</button>
+          </form>
+        </div>
+        <div class="g-card comm-top"><p class="g-eyebrow">Lo más escuchado</p><ol class="top-list" id="topList"></ol></div>
+        <div class="g-card comm-reviews"><p class="g-eyebrow">Reseñas recientes</p><ol class="rr-list" id="recentReviews"></ol></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · Shop: constelación y búsqueda -->
+  <section class="t-shop discover" id="descubre" data-nav="descubre" data-tone="light">
+    <div class="wrap">
+      <div class="constellation" id="constellation" aria-label="Discos destacados"></div>
+      <span class="kicker"><b>03</b> — Descubre</span>
+      <div class="s-wordmark" aria-hidden="true">sonora<i></i></div>
+      <h2 class="s-title">¿Qué quieres escuchar hoy?</h2>
+      <p class="s-lede" id="discoverLede"></p>
+      <form class="s-search" id="searchForm" role="search">
+        <label class="sr" for="q">Buscar discos, canciones o artistas</label>
+        <input id="q" name="q" type="search" placeholder="Un disco, una canción o un artista" autocomplete="off">
+        <button class="s-go" type="submit" aria-label="Buscar">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg>
+        </button>
+      </form>
+      <div class="cats" id="cats" aria-label="Géneros"></div>
+    </div>
+  </section>
+
+  <!-- 02 · Apple: la caja y el tocadiscos -->
+  <section class="t-gallery band gallery" id="caja" data-nav="tocadiscos" data-tone="light">
+    <div class="wrap">
+      <div class="g-head">
+        <div>
+          <span class="kicker"><b>04</b> — Tocadiscos</span>
+          <h2>La caja de discos.</h2>
+          <p>Pasa los vinilos uno por uno. El de enfrente va al tocadiscos y suena su canción más conocida.</p>
+        </div>
+        <button class="g-link" type="button" id="randomLink">Sacar uno al azar ›</button>
+      </div>
+      <div class="caja-grid">
+        <div class="g-card crate-card">
+          <div class="crate" id="crate" tabindex="0" aria-label="Caja de discos. Usa las flechas para pasar vinilos y Enter para reproducir.">
+            <div class="crate-inner" id="crateInner"></div>
+          </div>
+          <div class="ctl">
+            <button type="button" id="prev" aria-label="Disco anterior"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.5L4.5 7 9 11.5"/></svg></button>
+            <output id="counter" class="num"></output>
+            <button type="button" id="next" aria-label="Disco siguiente"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2.5L9.5 7 5 11.5"/></svg></button>
+          </div>
+          <p class="hint">Desliza, usa las flechas del teclado o toca un vinilo del fondo.</p>
+        </div>
+        <div class="g-card deck" id="plato">
+          <div class="plinth">
+            <div class="tt" id="tt">
+              <div class="platter">
+                <div class="disc"><div class="lbl"><img id="discLabel" alt=""></div></div>
+                <div class="sheen"></div>
+              </div>
+              <svg class="arm" viewBox="0 0 100 160" aria-hidden="true">
+                <circle cx="80" cy="20" r="15" fill="#d9c7b0"/><circle cx="80" cy="20" r="6" fill="#6c5f51"/>
+                <path d="M80 20 L46 132" stroke="#e8d6bf" stroke-width="5" stroke-linecap="round"/>
+                <rect x="34" y="128" width="20" height="26" rx="4" transform="rotate(17 44 141)" fill="#a8957d"/>
+              </svg>
+            </div>
+            <div class="now" id="now" aria-live="polite"></div>
+            <div class="prog num"><span id="tCur">0:00</span><div class="bar"><i id="bar"></i></div><span id="tDur">0:30</span></div>
+            <div class="rpm"><span><b>33⅓</b> RPM</span><span>Avance oficial de 30 segundos</span></div>
+          </div>
+          <div class="deck-info">
+            <span class="g-new" id="deckNew" hidden>Nuevo en la caja</span>
+            <div class="who" id="deckArtist"></div>
+            <h3 id="deckTitle"></h3>
+            <div class="meta num" id="deckMeta"></div>
+            <div class="meta num deck-stats" id="deckStats" aria-live="polite"></div>
+            <div class="g-eyebrow" style="margin-top:12px">Lista de canciones</div>
+            <ol class="tracks" id="deckTracks"></ol>
+            <div class="actions">
+              <button class="pill pill-fill" type="button" id="playBtn">Poner disco</button>
+              <button class="pill pill-line like" type="button" id="likeBtn" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8.2 3.6 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.6 0 5.7 3.7 4.5 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg><span id="likeText">Me gusta</span></button>
+              <a class="pill pill-line" id="spotifyLink" href="https://open.spotify.com" target="_blank" rel="noopener">Disco completo en Spotify ↗</a>
+              <a class="pill pill-line" id="appleLink" href="https://music.apple.com" target="_blank" rel="noopener">Apple Music ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="g-card reviews" id="reviews" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- 05 · Shop: el catálogo -->
+  <section class="t-shop catalog" id="discos" data-nav="discos" data-tone="light">
+    <div class="wrap">
+      <div class="s-head">
+        <div>
+          <span class="kicker"><b>05</b> — Catálogo</span>
+          <h2>Todos los discos</h2>
+          <p>Pasa el cursor sobre una portada para sacar el vinilo. Tócala para ponerla en el tocadiscos.</p>
+        </div>
+      </div>
+      <div class="achips" id="achips" aria-label="Filtrar por artista"></div>
+      <div class="filters" id="decades" aria-label="Filtrar por década"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- 03b · Apple: línea del tiempo -->
+  <section class="t-gallery band gallery" id="linea" data-nav="discos" data-tone="light" data-tone-out="110">
+    <div class="wrap">
+      <div class="g-head">
+        <div>
+          <span class="kicker"><b>05</b> — Línea del tiempo</span>
+          <h2 id="tlTitle"></h2>
+          <p>Cada portada está apilada en su año exacto, a escala. Los años vacíos también cuentan.</p>
+        </div>
+        <span class="tl-count">Desliza hacia los lados ↔</span>
+      </div>
+    </div>
+    <div class="wrap" style="padding-inline:0">
+      <div class="tl-scroll" id="tlScroll"><div class="tl2" id="tl"></div></div>
+    </div>
+  </section>
+
+  <!-- 04 · ORYZO: las voces detrás -->
+  <section class="t-dark" id="artistas" data-nav="artistas" data-tone="dark">
+    <div class="reveal">
+      <div class="rv-left">
+        <p class="eyebrow"><span class="rv-num" style="color:var(--accent)">06</span> — Las voces detrás</p>
+        <h2 class="display" id="featName"></h2>
+        <p class="sub" id="featStatement"></p>
+        <dl class="facts">
+          <div><dt>Origen</dt><dd id="factOrigin"></dd></div>
+          <div><dt>Discos en Sonora</dt><dd id="factCount" class="num"></dd></div>
+          <div><dt>Formación</dt><dd id="factForm"></dd></div>
+        </dl>
+      </div>
+      <div class="rv-center">
+        <div class="feat-img"><img id="featImg" alt=""></div>
+        <div class="feat-cap"><span id="featOrigin"></span><span>Retrato generativo</span></div>
+      </div>
+      <div class="rv-right">
+        <p class="body feat-bio" id="featBio"></p>
+        <p class="eyebrow">Toca un disco para ponerlo en el tocadiscos</p>
+        <div class="strip" id="featStrip"></div>
+      </div>
+    </div>
+    <div class="rail-wrap">
+      <div class="rail-head">
+        <h3 class="hsm">Todos los artistas</h3>
+        <div class="arrows">
+          <button class="btn-ghost btn-round" type="button" id="railPrev" aria-label="Artistas anteriores"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.5L4.5 7 9 11.5"/></svg></button>
+          <button class="btn-ghost btn-round" type="button" id="railNext" aria-label="Más artistas"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2.5L9.5 7 5 11.5"/></svg></button>
+        </div>
+      </div>
+      <div class="rail" id="rail"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="t-dark" data-tone="dark">
+  <div class="foot">
+    <div><p class="display">Sonora</p></div>
+    <div>
+      <h5>Blog</h5>
+      <ul><li><a href="#noticias">Noticias</a></li><li><a href="#comunidad">Comunidad</a></li></ul>
+    </div>
+    <div>
+      <h5>Explorar</h5>
+      <ul><li><a href="#descubre">Descubre</a></li><li><a href="#caja">Tocadiscos</a></li><li><a href="#discos">Discos</a></li><li><a href="#artistas">Artistas</a></li></ul>
+    </div>
+    <div>
+      <h5>Escuchar completo</h5>
+      <ul><li><a href="https://open.spotify.com" target="_blank" rel="noopener">Spotify ↗</a></li><li><a href="https://music.apple.com" target="_blank" rel="noopener">Apple Music ↗</a></li></ul>
+    </div>
+    <div>
+      <h5>Formato</h5>
+      <ul><li>LP de 12 pulgadas</li><li>33⅓ RPM</li><li>Una vuelta cada 1.8 s</li></ul>
+    </div>
+  </div>
+  <div class="credits">
+    <p class="credit">Portadas, listas y avances: catálogo público de Apple Music (iTunes)</p>
+    <p class="credit">Retratos generativos hechos en tu navegador</p>
+    <p class="credit">Noticias: Billboard, Pitchfork, Rolling Stone, NME y otros medios (enlace a cada nota original)</p>
+    <p class="install-note" id="installNote" style="margin:0;color:var(--cream-2)"></p>
+  </div>
+  <p class="legal">* Sonora es una colección personal. Discos, canciones y portadas pertenecen a sus respectivos artistas y sellos.</p>
+</footer>
+
+<div class="mini" id="mini" aria-label="Reproductor">
+  <img class="mini-disc" id="miniImg" alt="">
+  <div class="mini-text"><b id="miniTitle"></b><span id="miniArtist"></span></div>
+  <a class="mini-go" href="#plato">Ver plato</a>
+  <button class="mini-play" type="button" id="miniPlay" aria-label="Reproducir o pausar">
+    <svg class="ic-play" width="14" height="14" viewBox="0 0 12 12" fill="currentColor"><path d="M3 1.5v9l7.5-4.5z"/></svg>
+    <svg class="ic-pause" width="14" height="14" viewBox="0 0 12 12" fill="currentColor"><path d="M2.5 1.5h2.6v9H2.5zM6.9 1.5h2.6v9H6.9z"/></svg>
+  </button>
+  <div class="mini-bar"><i id="miniBar"></i></div>
+</div>
+
+<div class="install-sheet" id="installSheet" hidden role="dialog" aria-labelledby="installTitle">
+  <h3 id="installTitle">Instalar Sonora</h3>
+  <div id="installSteps"></div>
+  <button class="pill pill-fill" type="button" id="installClose">Entendido</button>
+</div>
+
+
+<div class="reader t-shop" id="reader" hidden role="dialog" aria-modal="true" aria-label="Entrada del blog">
+  <div class="reader-bar">
+    <button class="tlink" type="button" data-close>← Volver</button>
+    <span class="logo">sonora<i></i></span>
+    <button class="tlink" type="button" data-share>Compartir</button>
+  </div>
+  <div class="reader-body" id="readerBody"></div>
+</div>
+
+<div class="modal" id="authModal" hidden role="dialog" aria-modal="true" aria-labelledby="authTitle">
+  <div class="sheet">
+    <button class="sheet-x" type="button" data-close aria-label="Cerrar">×</button>
+    <h3 id="authTitle">Tu cuenta Sonora</h3>
+    <p class="sheet-sub" id="authReason"></p>
+    <p class="rd-note" id="authOffline" hidden>Las cuentas se activan cuando el sitio está conectado a la base de datos.</p>
+    <form class="form" id="authForm">
+      <div class="seg" id="authTabs">
+        <button type="button" data-mode="login" aria-pressed="true">Entrar</button>
+        <button type="button" data-mode="signup" aria-pressed="false">Crear cuenta</button>
+      </div>
+      <button type="button" class="pill pill-line wide" id="authGoogle">Continuar con Google</button>
+      <p class="or">o con tu correo</p>
+      <label>Nombre<input name="name" autocomplete="name" maxlength="40" placeholder="Cómo te verán los demás"></label>
+      <label>Correo<input name="email" type="email" autocomplete="email" required></label>
+      <label>Contraseña<input name="password" type="password" minlength="6" autocomplete="current-password" required></label>
+      <button type="button" class="tlink small" id="authForgot">Olvidé mi contraseña</button>
+      <p class="form-msg" id="authMsg" aria-live="polite"></p>
+      <button class="pill pill-fill wide" id="authSubmit" type="submit">Entrar</button>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="profileModal" hidden role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+  <div class="sheet">
+    <button class="sheet-x" type="button" data-close aria-label="Cerrar">×</button>
+    <div class="profile-top">
+      <span id="profileAvatar"></span>
+      <div><h3 id="profileTitle">Mi perfil</h3><p class="sheet-sub" id="profileEmail"></p></div>
+      <span class="badge" id="profileRole" hidden>Admin</span>
+    </div>
+    <div class="admin-tools" id="adminTools" hidden>
+      <p class="g-eyebrow">Administración</p>
+      <div class="admin-row">
+        <button class="pill pill-fill" type="button" data-admin="post">Escribir entrada</button>
+        <button class="pill pill-line" type="button" data-admin="poll">Nueva encuesta</button>
+        <button class="pill pill-line" type="button" data-admin="news">Buscar noticias ahora</button>
+      </div>
+    </div>
+    <form class="form" id="profileForm">
+      <label>Nombre visible<input name="display_name" maxlength="40" required></label>
+      <label>Usuario <small>(opcional)</small><input name="username" maxlength="24" pattern="[a-zA-Z0-9_]{3,24}" placeholder="ej. fan_de_vinilos"></label>
+      <label>Sobre ti<textarea name="bio" rows="2" maxlength="280" placeholder="Tus géneros, tu disco favorito…"></textarea></label>
+      <label>Foto (enlace https) <small>(opcional)</small><input name="avatar_url" type="url" placeholder="https://…"></label>
+      <div id="passwordBox" hidden><label>Nueva contraseña<input name="new_password" type="password" minlength="6" autocomplete="new-password"></label></div>
+      <p class="form-msg" id="profileMsg" aria-live="polite"></p>
+      <div class="form-row">
+        <button class="tlink" type="button" id="signOut">Cerrar sesión</button>
+        <button class="pill pill-fill" type="submit">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="editorModal" hidden role="dialog" aria-modal="true" aria-labelledby="editorTitle">
+  <div class="sheet sheet-wide">
+    <button class="sheet-x" type="button" data-close aria-label="Cerrar">×</button>
+    <h3 id="editorTitle">Nueva entrada</h3>
+    <form class="form" id="editorForm">
+      <label>Título<input name="title" required minlength="3" maxlength="200" autofocus></label>
+      <label>Resumen <small>(aparece en la portada)</small><textarea name="excerpt" rows="2" maxlength="600"></textarea></label>
+      <label>Imagen de portada (enlace https) <small>(opcional; si no, se usa la portada del disco)</small><input name="cover_url" type="url" placeholder="https://…"></label>
+      <div class="ed-body-head"><span>Texto <small>(Markdown: # título, **negritas**, *cursivas*, [enlace](https://…), &gt; cita, - lista)</small></span><button class="tlink small" type="button" id="edPreviewBtn">Vista previa</button></div>
+      <textarea name="body" id="edBody" rows="12" aria-label="Texto de la entrada"></textarea>
+      <div class="rd-prose ed-preview" id="edPreview" hidden></div>
+      <div class="form-grid">
+        <label>Artista relacionado<select name="artist_id" id="edArtist"></select></label>
+        <label>Disco relacionado<select name="album_id" id="edAlbum"></select></label>
+        <label>Etiquetas <small>(separadas por comas)</small><input name="tags" placeholder="reseña, estreno, gira"></label>
+        <label>Estado<select name="status"><option value="published">Publicada</option><option value="draft">Borrador</option></select></label>
+      </div>
+      <label class="check"><input type="checkbox" name="featured"> Destacar en la portada</label>
+      <p class="form-msg" id="edMsg" aria-live="polite"></p>
+      <div class="form-row"><span></span><button class="pill pill-fill" type="submit">Guardar</button></div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="pollModal" hidden role="dialog" aria-modal="true" aria-labelledby="pollTitle">
+  <div class="sheet">
+    <button class="sheet-x" type="button" data-close aria-label="Cerrar">×</button>
+    <h3 id="pollTitle">Nueva encuesta</h3>
+    <form class="form" id="pollForm">
+      <label>Pregunta<input name="question" required minlength="3" maxlength="200" placeholder="¿Cuál es el mejor disco del año?" autofocus></label>
+      <p class="label">Opciones <small>(si escribes el nombre de un disco del catálogo, se enlaza solo)</small></p>
+      <ol class="poll-edit" id="pollOptions"></ol>
+      <button class="tlink small" type="button" id="addOption">+ Agregar opción</button>
+      <div class="form-grid">
+        <label>Cierra en<select name="days"><option value="0">Sin cierre</option><option value="1">1 día</option><option value="3">3 días</option><option value="7" selected>1 semana</option><option value="30">1 mes</option></select></label>
+        <label>Dónde aparece<select name="post_id" id="pollAttach"></select></label>
+      </div>
+      <p class="form-msg" id="pollMsg" aria-live="polite"></p>
+      <div class="form-row"><span></span><button class="pill pill-fill" type="submit">Publicar encuesta</button></div>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

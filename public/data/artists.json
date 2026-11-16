@@ -1,0 +1,222 @@
+{
+  "weeknd": {
+    "name": "The Weeknd",
+    "origin": "Toronto, Canadá",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#1a0505",
+    "dot": "#ff3b3b",
+    "statement": "Luces rojas y sintetizadores de los ochenta.",
+    "bio": "Abel Tesfaye publicó sus primeras canciones de forma anónima y en 2011 lanzó tres mixtapes gratuitas: House of Balloons, Thursday y Echoes of Silence. En 2021 Billboard nombró a “Blinding Lights” la canción más exitosa en la historia del Hot 100."
+  },
+  "kanye": {
+    "name": "Kanye West",
+    "origin": "Chicago, Illinois",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#1d1a12",
+    "dot": "#e8d9b0",
+    "statement": "Del soul acelerado al autotune.",
+    "bio": "Fue productor de Roc-A-Fella antes de debutar como solista con The College Dropout en 2004. Discos como 808s & Heartbreak y My Beautiful Dark Twisted Fantasy cambiaron el sonido del hip hop."
+  },
+  "drake": {
+    "name": "Drake",
+    "origin": "Toronto, Canadá",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#101418",
+    "dot": "#c9d6e3",
+    "statement": "Toronto en cada verso.",
+    "bio": "Aubrey Graham actuó en la serie Degrassi antes de convertirse en uno de los artistas más escuchados de la era del streaming. Mezcla rap y R&B en partes iguales."
+  },
+  "21savage": {
+    "name": "21 Savage",
+    "origin": "Atlanta, Georgia",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#0d0d10",
+    "dot": "#b9b9c6",
+    "statement": "Calma helada.",
+    "bio": "Nació en Londres y creció en Atlanta. Su voz grave y directa lo volvió socio frecuente de Metro Boomin, con quien grabó Savage Mode y Savage Mode II, y de Drake en Her Loss."
+  },
+  "frank": {
+    "name": "Frank Ocean",
+    "origin": "Long Beach, California",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#31452f",
+    "dot": "#f4a259",
+    "statement": "Un silencio largo y dos discos eternos.",
+    "bio": "Cantante y productor que habla poco y publica menos. Después de channel ORANGE en 2012 lanzó Blonde de forma independiente en 2016."
+  },
+  "travis": {
+    "name": "Travis Scott",
+    "origin": "Houston, Texas",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#24140a",
+    "dot": "#ff9a3c",
+    "statement": "Un parque de diversiones hecho disco.",
+    "bio": "Jacques Webster II convierte sus conciertos en espectáculos de feria. ASTROWORLD lleva el nombre de un parque de diversiones de Houston que cerró en 2005."
+  },
+  "rauw": {
+    "name": "Rauw Alejandro",
+    "origin": "Puerto Rico",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#0b1530",
+    "dot": "#7aa7ff",
+    "statement": "Reggaetón con coreografía.",
+    "bio": "Raúl Alejandro Ocasio mezcla reggaetón, R&B y pop electrónico, y baila sus canciones como una estrella de pop. Saturno y Cosa Nuestra exploran el espacio y la salsa."
+  },
+  "legallyrxx": {
+    "name": "legallyrxx",
+    "origin": "Cancún, México",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#1e0d1c",
+    "dot": "#ff7ac8",
+    "statement": "Reggaetón triste desde el Caribe mexicano.",
+    "bio": "Alan Octavio Hernández, nacido en 2004, hace reggaetón alternativo y emocional desde Cancún. Aquí están cuatro de sus proyectos, de LQMGDT a (((REXX)))."
+  },
+  "mora": {
+    "name": "Mora",
+    "origin": "Puerto Rico",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#0a1626",
+    "dot": "#9fd0ff",
+    "statement": "Reggaetón para mirar las estrellas.",
+    "bio": "Gabriel Mora Quintero empezó a publicar canciones en 2017 y firmó con Rimas Entertainment. Su reggaetón es atmosférico y reflexivo, con trap y sonidos tropicales."
+  },
+  "post": {
+    "name": "Post Malone",
+    "origin": "Syracuse, Nueva York",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#1f1a14",
+    "dot": "#f2c879",
+    "statement": "Del rap al country sin pedir permiso.",
+    "bio": "Austin Post se dio a conocer en 2015 con “White Iverson” y pasó del hip hop al pop y al rock. Con F-1 Trillion, en 2024, llegó al country."
+  },
+  "olivia": {
+    "name": "Olivia Rodrigo",
+    "origin": "California",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#1d0c24",
+    "dot": "#c78bff",
+    "statement": "Pop punk para corazones rotos.",
+    "bio": "Debutó en 2021 con “drivers license”, que entró directo al número uno del Billboard Hot 100. SOUR y GUTS la volvieron la voz del pop adolescente."
+  },
+  "badbunny": {
+    "name": "Bad Bunny",
+    "origin": "Puerto Rico",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#0e3a4f",
+    "dot": "#8fd3ee",
+    "statement": "El verano que no se acabó.",
+    "bio": "Benito Antonio Martínez Ocasio llevó el trap y el reggaetón de Puerto Rico al centro del pop global. Un Verano Sin Ti fue el álbum más escuchado de Spotify en 2022."
+  },
+  "rosalia": {
+    "name": "Rosalía",
+    "origin": "Cataluña, España",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#1a1a1a",
+    "dot": "#ff4a4a",
+    "statement": "Flamenco a toda velocidad.",
+    "bio": "Formada en flamenco en la Escola Superior de Música de Catalunya, mezcla palmas, reggaetón y electrónica. MOTOMAMI ganó el Grammy Latino al Álbum del Año en 2022."
+  },
+  "billie": {
+    "name": "Billie Eilish",
+    "origin": "Los Ángeles, California",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#071a33",
+    "dot": "#6fb2ff",
+    "statement": "Susurros a todo volumen.",
+    "bio": "Compone con su hermano Finneas desde que eran adolescentes en Los Ángeles. HIT ME HARD AND SOFT, su tercer álbum, salió en 2024."
+  },
+  "kendrick": {
+    "name": "Kendrick Lamar",
+    "origin": "Compton, California",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#141414",
+    "dot": "#f2f2f2",
+    "statement": "Un Pulitzer escrito en verso.",
+    "bio": "Rapero de Compton que convierte cada álbum en una novela. En 2018 fue el primer músico fuera del jazz y la música clásica en ganar el Pulitzer de Música, por DAMN."
+  },
+  "daftpunk": {
+    "name": "Daft Punk",
+    "origin": "París, Francia",
+    "form": "Dúo",
+    "n": 2,
+    "bg": "#0a0a0a",
+    "dot": "#e9cf86",
+    "statement": "Dos robots y una bola de espejos.",
+    "bio": "Thomas Bangalter y Guy-Manuel de Homem-Christo, ocultos tras cascos de robot, llevaron el house francés a todo el mundo. Random Access Memories ganó el Grammy al Álbum del Año. Se separaron en 2021."
+  },
+  "radiohead": {
+    "name": "Radiohead",
+    "origin": "Abingdon, Inglaterra",
+    "form": "Banda",
+    "n": 5,
+    "bg": "#0f2236",
+    "dot": "#a9c8e8",
+    "statement": "Ansiedad en alta fidelidad.",
+    "bio": "Cinco amigos de escuela que pasaron del rock de guitarras a la experimentación electrónica. OK Computer, su tercer álbum, anticipó la angustia de la era digital."
+  },
+  "soda": {
+    "name": "Soda Stereo",
+    "origin": "Buenos Aires, Argentina",
+    "form": "Banda",
+    "n": 3,
+    "bg": "#2a1607",
+    "dot": "#f0b13b",
+    "statement": "Gracias totales.",
+    "bio": "Gustavo Cerati, Zeta Bosio y Charly Alberti formaron la banda que definió el rock en español de los ochenta y noventa."
+  },
+  "tacvba": {
+    "name": "Café Tacvba",
+    "origin": "Ciudad Satélite, México",
+    "form": "Banda",
+    "n": 4,
+    "bg": "#12241c",
+    "dot": "#3fd1a7",
+    "statement": "Todo cabe en un disco.",
+    "bio": "Mezclan son jarocho, punk, banda, bolero y electrónica sin pedir permiso. Re, su segundo álbum, es uno de los discos más citados del rock latino."
+  },
+  "natalia": {
+    "name": "Natalia Lafourcade",
+    "origin": "México",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#2b1d12",
+    "dot": "#e9c79a",
+    "statement": "Canciones con raíz.",
+    "bio": "Cantautora mexicana que recorre el pop, el folk y la música tradicional latinoamericana. Hasta la Raíz, de 2015, es uno de los discos más queridos de su carrera."
+  },
+  "pinkfloyd": {
+    "name": "Pink Floyd",
+    "origin": "Londres, Inglaterra",
+    "form": "Banda",
+    "n": 4,
+    "bg": "#0b0b0d",
+    "dot": "#c9a4ff",
+    "statement": "La luz entra blanca y sale en colores.",
+    "bio": "Banda londinense formada en 1965 que llevó el rock psicodélico a obras conceptuales completas. The Dark Side of the Moon pasó más de 900 semanas en la lista Billboard 200."
+  },
+  "mj": {
+    "name": "Michael Jackson",
+    "origin": "Gary, Indiana",
+    "form": "Solista",
+    "n": 1,
+    "bg": "#1c0606",
+    "dot": "#ff6b6b",
+    "statement": "El disco más vendido de la historia.",
+    "bio": "Empezó de niño con los Jackson 5 y se convirtió en el Rey del Pop. Thriller se considera el álbum más vendido de todos los tiempos."
+  }
+}

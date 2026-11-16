@@ -1,0 +1,12 @@
+/* Tema Apple (galería)
+   Bandas claras, encabezados y enlaces de las secciones tipo galería. */
+
+.t-gallery { background: var(--g-white); color: var(--g-ink); font: 400 17px/1.47 var(--f-text); letter-spacing: -0.374px; }
+.t-gallery.band { background: var(--g-mist); }
+.gallery { padding-block: var(--band); }
+.g-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px 24px; flex-wrap: wrap; margin-bottom: 40px; padding-bottom: 28px; border-bottom: 1px dashed var(--sand); }
+.g-head h2 { margin: 0; font: 600 clamp(32px, 3.4vw, 64px)/1.08 var(--f-display); letter-spacing: -0.01em; text-wrap: balance; }
+.g-head p { margin: 10px 0 0; max-width: 52ch; color: var(--g-slate); }
+.g-link { color: var(--g-blue); text-decoration: none; background: none; border: 0; cursor: pointer; padding: 0; font-size: 17px; }
+.g-link:hover { text-decoration: underline; }
+.g-eyebrow { font: 600 12px/1.33 var(--f-text); letter-spacing: .06em; text-transform: uppercase; color: var(--g-slate); }

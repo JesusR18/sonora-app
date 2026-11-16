@@ -1,0 +1,14 @@
+/* Reinicio y utilidades
+   Normaliza el navegador y define utilidades compartidas. */
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; background: var(--walnut); scroll-padding-top: var(--nav-h); }
+body { margin: 0; background: var(--walnut); font-family: var(--f-text); -webkit-font-smoothing: antialiased; overflow-x: clip; }
+img { max-width: 100%; display: block; }
+button, input { font: inherit; color: inherit; letter-spacing: inherit; text-transform: inherit; }
+a { color: inherit; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.num { font-variant-numeric: tabular-nums; }
+[hidden] { display: none !important; }
+.wrap { max-width: calc(var(--wrap) + var(--gutter) * 2); margin-inline: auto; padding-inline: var(--gutter); }
+section { overflow-x: clip; }

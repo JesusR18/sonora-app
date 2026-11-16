@@ -1,0 +1,8 @@
+/* Animaciones
+   Giro de los vinilos y flotación de las portadas. */
+
+@keyframes drift {
+  from { transform: translateX(-50%) rotate(var(--r)) translateY(0); }
+  to { transform: translateX(-50%) rotate(calc(var(--r) * -0.4)) translateY(-12px); }
+}
+@keyframes spin { to { transform: rotate(360deg); } }

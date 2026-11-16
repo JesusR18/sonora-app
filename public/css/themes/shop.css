@@ -1,0 +1,6 @@
+/* Tema Shop (claro)
+   Lienzo marfil y estados de foco y selección. */
+
+.t-shop { background: var(--ivory); color: var(--s-ink); font: 400 16px/1.38 var(--f-text); letter-spacing: -0.5px; }
+.t-shop :focus-visible, .t-gallery :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.t-shop ::selection, .t-gallery ::selection { background: rgba(194, 86, 28, .22); }

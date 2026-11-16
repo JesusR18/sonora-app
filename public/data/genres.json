@@ -1,0 +1,26 @@
+{
+  "hiphop": {
+    "name": "Hip hop y R&B",
+    "c": "#7a4d6b"
+  },
+  "urbano": {
+    "name": "Urbano latino",
+    "c": "#d49a3a"
+  },
+  "pop": {
+    "name": "Pop",
+    "c": "#c97b6b"
+  },
+  "rockes": {
+    "name": "Rock en español",
+    "c": "#c2561c"
+  },
+  "rock": {
+    "name": "Rock",
+    "c": "#4f6d6a"
+  },
+  "electro": {
+    "name": "Electrónica",
+    "c": "#7d8450"
+  }
+}

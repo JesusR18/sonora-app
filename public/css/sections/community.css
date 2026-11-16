@@ -1,0 +1,108 @@
+/* Sección: comunidad (Apple) y reseñas del tocadiscos
+   Encuesta, chat en vivo, lo más escuchado y reseñas, en tarjetas planas sobre la banda lino. */
+
+.comm-grid {
+  display: grid; gap: 24px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  grid-template-areas: "poll chat" "top chat" "reviews reviews";
+}
+.comm-poll { grid-area: poll; }
+.comm-chat { grid-area: chat; display: flex; flex-direction: column; min-height: 460px; max-height: 640px; }
+.comm-grid { align-items: start; }
+.comm-chat { align-self: stretch; }
+.comm-top { grid-area: top; }
+.comm-reviews { grid-area: reviews; }
+.community .g-eyebrow { margin: 0 0 14px; }
+
+/* Encuesta */
+.poll-q { margin: 0 0 14px; font: 600 clamp(20px, 1.6vw, 26px)/1.2 var(--f-display); letter-spacing: -0.015em; }
+.poll-opts { display: grid; gap: 8px; }
+.poll-opt {
+  position: relative; display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 48px; padding: 10px 16px;
+  border: 1px solid var(--sand); border-radius: 14px; background: var(--card); cursor: pointer; overflow: hidden; text-align: left; font-size: 16px;
+}
+.poll-opt:hover:not(:disabled) { border-color: var(--g-steel); }
+.poll-opt:disabled { cursor: default; }
+.po-bar { position: absolute; inset: 0 auto 0 0; background: var(--linen); transition: width .6s cubic-bezier(.2, .8, .2, 1); }
+.poll-opt.lead .po-bar { background: rgba(194, 86, 28, .14); }
+.poll-opt.mine { border-color: var(--accent-ink); box-shadow: inset 0 0 0 1px var(--accent-ink); }
+.po-label, .po-pct { position: relative; }
+.po-label small { color: var(--accent-ink); font-size: 13px; }
+.po-pct { font-weight: 600; }
+.poll-foot { margin: 12px 0 0; font-size: 13px; color: var(--g-slate); }
+
+/* Chat */
+.chat-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.online { display: inline-flex; align-items: center; gap: 7px; margin: 0; font-size: 13px; color: var(--g-slate); }
+.online i { width: 7px; height: 7px; border-radius: 50%; background: #3f9b5a; }
+.chat-list { list-style: none; margin: 0 -8px; padding: 0 8px; flex: 1; overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; gap: 4px; }
+.msg { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 10px; padding: 8px; border-radius: 14px; }
+.msg.mine { background: var(--linen); }
+.msg-head { display: flex; align-items: baseline; gap: 8px; margin: 0; font-size: 13px; color: var(--g-slate); }
+.msg-head b { color: var(--g-ink); font-weight: 600; }
+.msg-body { margin: 2px 0 0; font-size: 15px; line-height: 1.4; overflow-wrap: anywhere; }
+.msg-del { margin-left: auto; border: 0; background: none; cursor: pointer; color: var(--g-slate); font-size: 16px; opacity: 0; }
+.msg:hover .msg-del, .msg-del:focus-visible { opacity: 1; }
+.chat-empty { margin: auto; padding: 24px; text-align: center; color: var(--g-slate); font-size: 15px; }
+.chat-form { display: flex; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--sand); }
+.chat-form input { flex: 1; min-width: 0; height: 40px; padding: 0 16px; border: 1px solid var(--sand); border-radius: 9999px; background: var(--ivory); font-size: 15px; }
+.chat-form input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* Lo más escuchado */
+.top-list, .rr-list { list-style: none; margin: 0; padding: 0; }
+.top-row, .rr { display: grid; align-items: center; width: 100%; border: 0; background: none; cursor: pointer; text-align: left; color: inherit; padding: 10px 0; border-top: 1px dashed var(--sand); }
+.top-list li:first-child .top-row { border-top: 0; }
+.top-row { grid-template-columns: 22px 44px minmax(0, 1fr) auto; gap: 12px; }
+.top-row img { width: 44px; height: 44px; border-radius: 8px; }
+.top-n { font: 600 18px/1 var(--f-display); color: var(--accent-ink); }
+.top-main { display: flex; flex-direction: column; min-width: 0; }
+.top-main b, .top-main span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.top-main b { font-weight: 600; }
+.top-main span { font-size: 14px; color: var(--g-slate); }
+.top-stats { font-size: 13px; color: var(--g-slate); }
+.top-row:hover b, .rr:hover .rr-title { color: var(--accent-ink); }
+
+/* Reseñas recientes */
+.rr-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 24px; }
+.rr { grid-template-columns: 56px minmax(0, 1fr); gap: 14px; align-items: start; }
+.rr img { width: 56px; height: 56px; border-radius: 10px; }
+.rr-main { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.rr-title { font-weight: 600; }
+.rr-body { font-size: 14px; line-height: 1.4; color: var(--g-ink); }
+.rr-who { font-size: 13px; color: var(--g-slate); }
+.cm-empty { padding: 12px 0; color: var(--g-slate); font-size: 15px; list-style: none; }
+
+/* Estrellas */
+.stars { color: var(--accent); letter-spacing: 1px; font-size: 14px; }
+.stars i { font-style: normal; color: var(--sand); }
+
+/* Reseñas del disco en el tocadiscos */
+.reviews { margin-top: 24px; display: grid; gap: 18px; }
+.rv-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px 24px; flex-wrap: wrap; }
+.rv-head h3 { margin: 4px 0 0; font: 600 clamp(22px, 2vw, 30px)/1.1 var(--f-display); letter-spacing: -0.015em; }
+.rv-head h3 span { color: var(--g-slate); font-weight: 500; }
+.rv-score { display: flex; align-items: baseline; gap: 10px; }
+.rv-score b { font: 600 34px/1 var(--f-display); }
+.rv-score .stars { font-size: 18px; }
+.rv-score small { color: var(--g-slate); font-size: 14px; }
+.rv-note, .rd-note { margin: 0; padding: 14px 16px; border-radius: 14px; background: var(--linen); color: var(--g-slate); font-size: 15px; }
+.reviews > .pill { justify-self: start; }
+.rv-form { display: grid; gap: 10px; }
+.star-input { display: flex; gap: 2px; border: 0; padding: 0; margin: 0; }
+.star-input button { width: 40px; height: 40px; border: 0; background: none; cursor: pointer; font-size: 28px; line-height: 1; color: var(--sand); transition: transform .15s, color .15s; }
+.star-input button[aria-pressed="true"] { color: var(--accent); }
+.star-input button:hover { transform: scale(1.12); }
+.rv-form textarea, .cm-form textarea { width: 100%; resize: vertical; min-height: 84px; padding: 12px 14px; border: 1px solid var(--sand); border-radius: 14px; background: var(--ivory); font: 400 16px/1.45 var(--f-text); letter-spacing: -0.2px; color: var(--g-ink); }
+.rv-form textarea:focus, .cm-form textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.rv-send { display: flex; justify-content: flex-end; align-items: center; gap: 16px; flex-wrap: wrap; }
+.rv-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; }
+.rv-item { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 12px; padding: 14px 0; border-top: 1px dashed var(--sand); }
+.rv-who { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin: 0; font-size: 14px; color: var(--g-slate); }
+.rv-who b { color: var(--g-ink); font-weight: 600; }
+.rv-text { margin: 6px 0 0; font-size: 15px; line-height: 1.45; overflow-wrap: anywhere; }
+
+@media (max-width: 900px) {
+  .comm-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "poll" "chat" "top" "reviews"; }
+  .comm-chat { min-height: 440px; max-height: 70svh; }
+  .rr-list, .rv-list { grid-template-columns: minmax(0, 1fr); }
+}

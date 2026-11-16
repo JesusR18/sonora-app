@@ -1,0 +1,11 @@
+/* Hoja de instalación (Shop)
+   Pasos para instalar la app cuando el navegador no ofrece el botón. */
+
+.install-sheet {
+  position: fixed; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 100; transform: translateX(-50%);
+  width: min(420px, calc(100% - 32px)); max-height: calc(100svh - 32px); overflow-y: auto; background: var(--card); color: var(--s-ink);
+  border-radius: 28px; padding: 24px; box-shadow: var(--s-shadow-card), var(--s-shadow-lg); font: 400 15px/1.4 var(--f-text); letter-spacing: -0.3px;
+}
+.install-sheet h3 { margin: 0 0 8px; font: 600 21px/1.2 var(--f-display); letter-spacing: -0.03em; }
+.install-sheet ol { margin: 0 0 16px; padding-left: 20px; display: grid; gap: 6px; color: var(--s-muted); }
+.install-sheet b { color: var(--s-ink); font-weight: 600; }

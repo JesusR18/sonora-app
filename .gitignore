@@ -1,0 +1,5 @@
+node_modules/
+.env
+
+# Installers/builds are too large for GitHub (100 MB limit)
+public/downloads/*.exe

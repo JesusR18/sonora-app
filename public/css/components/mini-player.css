@@ -1,0 +1,20 @@
+/* Mini reproductor (Shop)
+   Pastilla flotante que aparece mientras suena un disco. */
+
+.mini {
+  position: fixed; z-index: 58; left: 50%; bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  width: min(520px, calc(100% - 32px)); transform: translate(-50%, calc(100% + 40px)); transition: transform .45s cubic-bezier(.2, .8, .2, 1);
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; align-items: center; gap: 12px;
+  padding: 6px; border-radius: 9999px; background: var(--card); color: var(--s-ink); overflow: hidden;
+  box-shadow: 0 0 0 1px var(--s-faint), var(--s-shadow-card), var(--s-shadow-lg); font: 400 14px/1.2 var(--f-text); letter-spacing: -0.3px;
+}
+.mini.show { transform: translate(-50%, 0); }
+.mini-disc { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; animation: spin 1.8s linear infinite; animation-play-state: paused; }
+body.playing .mini-disc { animation-play-state: running; }
+.mini-text { display: grid; gap: 2px; min-width: 0; }
+.mini-text b { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mini-text span { font-size: 12px; color: var(--s-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mini-go { color: var(--accent-ink); text-decoration: none; font-size: 13px; padding-inline: 4px; }
+.mini-play { width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--accent); color: var(--ivory); display: grid; place-items: center; cursor: pointer; box-shadow: var(--s-shadow-violet); }
+.mini-bar { position: absolute; left: 30px; right: 30px; bottom: 0; height: 2px; background: var(--s-faint); }
+.mini-bar i { display: block; height: 100%; width: 0; background: var(--accent); }

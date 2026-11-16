@@ -1,0 +1,29 @@
+/* Tema ORYZO (oscuro)
+   Tipografía en mayúsculas, botones y divisores de los capítulos oscuros. */
+
+.t-dark { background: var(--walnut); color: var(--cream); font: 500 var(--t-label)/1.2 var(--f-text); font-feature-settings: "ss01"; text-transform: uppercase; letter-spacing: normal; }
+.t-dark ::selection { background: var(--cream); color: var(--walnut); }
+.t-dark :focus-visible { outline: 1px dashed var(--cream); outline-offset: 4px; }
+.t-dark .prose { text-transform: none; font-weight: 400; }
+.body { font: 400 var(--t-body)/1.26 var(--f-text); text-transform: none; margin: 0; max-width: 22em; }
+.display { font: 500 var(--t-display)/.9 var(--f-text); margin: 0; }
+.hsm { font: 500 var(--t-hsm)/1.09 var(--f-text); margin: 0; }
+.sub { font: 500 var(--t-sub)/1 var(--f-text); margin: 0; }
+.eyebrow { font: 500 var(--t-label)/1.2 var(--f-text); color: var(--cream-2); margin: 0; }
+.rv-num { color: var(--cream-3); }
+.dash { border: 0; border-top: 1px dashed var(--cork); margin: 0; width: 100%; }
+.btn-fill {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 24px; border: 0; border-radius: 36px; background: var(--accent); color: var(--ivory);
+  font: 500 var(--t-label)/1 var(--f-text); text-transform: uppercase; cursor: pointer; text-decoration: none; white-space: nowrap;
+}
+.btn-fill:hover { filter: brightness(1.08); }
+.btn-ghost {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 7.5px 16px; border: 1px solid var(--cream); border-radius: 22.5px; background: transparent; color: var(--cream);
+  font: 500 var(--t-label)/1.2 var(--f-text); text-transform: uppercase; cursor: pointer; text-decoration: none; white-space: nowrap;
+}
+.btn-ghost:hover { background: rgba(255, 237, 215, .06); }
+.btn-round { width: 40px; height: 40px; padding: 0; border-radius: 50%; flex: none; }
+.tlink { background: none; border: 0; padding: 0; cursor: pointer; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+.tlink:hover { text-decoration-style: dashed; }

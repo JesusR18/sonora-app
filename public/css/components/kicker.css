@@ -1,0 +1,6 @@
+/* Etiquetas numeradas
+   Rasgo compartido entre secciones: "01 — Descubre", "02 — Tocadiscos"… */
+
+.kicker { display: block; margin-bottom: 14px; font: 500 12px/1.2 var(--f-text); letter-spacing: .04em; text-transform: uppercase; color: var(--taupe); }
+.kicker b { font-weight: 500; color: var(--accent-ink); }
+.discover .kicker { margin: 18px 0 0; }

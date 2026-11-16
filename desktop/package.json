@@ -1,0 +1,40 @@
+{
+  "name": "sonora-desktop",
+  "productName": "Sonora",
+  "version": "1.0.0",
+  "description": "Sonora Discos para Windows",
+  "author": "Sonora",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "node prepare.js && electron .",
+    "build": "node prepare.js && electron-builder --win nsis && node publish.js"
+  },
+  "build": {
+    "appId": "app.sonora.discos",
+    "productName": "Sonora",
+    "files": [
+      "main.js",
+      "app/**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "app/public/icons/icon-512.png",
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Sonora",
+      "artifactName": "Sonora-Setup.exe"
+    }
+  },
+  "devDependencies": {
+    "electron": "^44.7.0",
+    "electron-builder": "^26.15.3"
+  }
+}

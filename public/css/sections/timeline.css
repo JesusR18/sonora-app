@@ -1,0 +1,17 @@
+/* Sección: línea del tiempo (Apple)
+   Degradado de salida hacia lo oscuro y portadas a escala por año. */
+
+#linea {
+  padding-bottom: clamp(200px, 20vw, 300px);
+  background: linear-gradient(180deg, var(--ivory) 0, var(--linen) 160px, var(--linen) 52%, #efe2d2 64%, #c9ab8c 76%, #6a4a33 88%, #2a1b11 95%, var(--walnut) 100%);
+}
+#linea .tl2-year { color: var(--espresso); }
+.tl-scroll { overflow-x: auto; padding-bottom: 8px; scrollbar-width: thin; }
+.tl2 { position: relative; margin-inline: 24px; }
+.tl2-axis { position: absolute; left: 0; right: 0; height: 1px; background: var(--g-hair); }
+.tl2-col { position: absolute; transform: translateX(-50%); display: flex; flex-direction: column-reverse; gap: 4px; }
+.tl2-col button { border: 0; padding: 0; background: none; cursor: pointer; border-radius: 9px; }
+.tl2-col img { width: 36px; height: 36px; border-radius: 9px; object-fit: cover; box-shadow: var(--s-shadow-sm); transition: transform .2s; }
+.tl2-year { position: absolute; transform: translateX(-50%); font-size: 11px; font-weight: 600; letter-spacing: -0.1px; }
+.tl2-dec { position: absolute; transform: translateX(-50%); font-size: 11px; color: var(--g-slate); letter-spacing: -0.1px; }
+.tl-count { font-size: 14px; color: var(--g-slate); letter-spacing: -0.224px; }

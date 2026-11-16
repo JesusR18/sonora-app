@@ -1,0 +1,45 @@
+/* Sonora combina tres modelos con una sola paleta cálida, para que se lean como un mismo lugar:
+   · ORYZO "cuarto oscuro": inicio, artistas y pie. Nogal, crema en mayúsculas, punteados.
+   · Shop "constelación": descubre y catálogo. Tarjetas flotantes redondeadas y sombras suaves.
+   · Apple "galería": caja, tocadiscos y línea del tiempo. Bandas marfil/lino y tarjetas planas.
+   Paleta: nogal → corteza → arena → lino → marfil, texto espresso o crema, y un solo acento terracota.
+   Las secciones claras y oscuras se funden con degradados cálidos, como un atardecer. */
+:root {
+  /* ORYZO */
+  --walnut: #100904; --bark: #382416; --cork: #40372e; --drift: #6c5f51; --cream: #ffedd7;
+  --cream-2: rgba(255, 237, 215, .66); --cream-3: rgba(255, 237, 215, .42); --ember: #dc5000;
+  /* Claros cálidos (sustituyen al blanco y gris fríos de Apple y Shop) */
+  --ivory: #fffaf3;          /* lienzo claro */
+  --card: #fffdf9;           /* tarjetas */
+  --linen: #f4ece1;          /* bandas */
+  --sand: #e6dccf;           /* líneas finas */
+  --espresso: #1f140c;       /* texto sobre claro */
+  --taupe: #76675a;          /* texto secundario sobre claro */
+  /* Un solo acento para toda la página */
+  --accent: #c2561c;         /* terracota: botones, activo, avance */
+  --accent-ink: #a3460f;     /* terracota para texto sobre claro (contraste AA) */
+  --accent-glow: rgba(194, 86, 28, .30);
+  /* Apple, en la paleta cálida */
+  --g-white: var(--card); --g-mist: var(--linen); --g-ink: var(--espresso); --g-slate: var(--taupe); --g-steel: #a89888; --g-hair: var(--sand);
+  --g-blue: var(--accent-ink); --g-new: var(--accent-ink); --g-track: rgba(118, 103, 90, .14); --g-glyph: rgba(31, 20, 12, .6); --g-frost: rgba(255, 250, 243, .84);
+  /* Shop, en la paleta cálida; sombras teñidas de café en lugar de gris */
+  --s-ink: var(--espresso); --s-muted: var(--taupe); --s-faint: #ece2d5;
+  --s-shadow-sm: 0 2px 8px rgba(60, 35, 15, .06);
+  --s-shadow-card: 0 4px 6px -1px rgba(60, 35, 15, .09), 0 2px 4px -2px rgba(60, 35, 15, .08);
+  --s-shadow-lg: 0 6px 28px rgba(60, 35, 15, .12);
+  --s-shadow-violet: 0 4px 22px var(--accent-glow);
+
+  --f-text: Inter, "SF Pro Text", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --f-display: "Inter Tight", "SF Pro Display", Inter, "Helvetica Neue", Arial, system-ui, sans-serif;
+  --gutter: max(clamp(16px, 3vw, 48px), env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
+  --wrap: 1200px;
+  --nav-h: 52px;
+  --band: clamp(64px, 8vw, 120px);
+  --t-display: clamp(40px, 3.55vw, 96px);
+  --t-heading: clamp(30px, 2.85vw, 76px);
+  --t-body: clamp(19px, 2vw, 40px);
+  --t-hsm: clamp(18px, 1.67vw, 32px);
+  --t-sub: clamp(15px, 1.25vw, 24px);
+  --t-label: clamp(12px, .84vw, 16px);
+  --t-micro: clamp(10px, .7vw, 13px);
+}

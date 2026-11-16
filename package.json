@@ -1,0 +1,13 @@
+{
+  "name": "sonora-discos",
+  "version": "1.0.0",
+  "description": "Sonora Discos: caja de vinilos y tocadiscos como app instalable (PWA).",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
